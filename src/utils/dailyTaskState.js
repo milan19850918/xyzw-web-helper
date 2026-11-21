@@ -164,6 +164,11 @@ const CDN_BASE = "https://xxz-xyzw-res.hortorgames.com";
  * @param {Function} [fetchConfig] Fetch implementation for the official CDN.
  * @returns {Promise<object>} Validated task definitions and point-reward thresholds.
  */
+export async function loadDailyTaskConfig(
+  tokenStore,
+  tokenId,
+  fetchConfig = globalThis.fetch,
+) {
   const verResp = await fetchConfig(`${CDN_BASE}/data/version.json`, {
     signal: AbortSignal.timeout(15000),
   });
