@@ -150,7 +150,7 @@ export async function fillHangUpTime({
 }
 
 /**
-* CDN base URL for official game configuration data.
+ * CDN base URL for official game configuration data.
  * The version string comes from data/version.json on the CDN, not from
  * system_getdatabundlever (whose dataBundleVer is a Cocos bundle hash).
  */
@@ -180,7 +180,7 @@ export async function loadDailyTaskConfig(
   if (!configsByVersion.has(version)) {
     const loading = (async () => {
       const response = await fetchConfig(
-       `${CDN_BASE}/data/${version}/config.json`,
+        `${CDN_BASE}/data/${version}/config.json`,
         { signal: AbortSignal.timeout(30000) },
       );
       if (!response.ok) throw new Error("官方任务配置读取失败");
